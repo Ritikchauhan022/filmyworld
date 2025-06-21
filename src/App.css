@@ -132,7 +132,7 @@ align-items: center;
   color: white;
 }
 
- /* card.css  */
+ /* yha se card.css file hai  */
 .eye {
   display: grid;
   grid-template-columns: repeat(5, minmax(180px, 1fr));
@@ -147,6 +147,7 @@ align-items: center;
   align-items: flex-start;
   padding: 10px 5px 0 5px;
   gap: 5px;
+
 }
 
 .line {
@@ -161,7 +162,7 @@ align-items: center;
 
 .b {
   width: 100%;
-  height: 450px;
+  min-height: 480px; /* changed from fixed to min-height */
   display: flex;
   flex-direction: column;
   background-color: #111;
@@ -169,7 +170,7 @@ align-items: center;
   box-shadow: 0 0 5px #d4ecff;
   border-radius: 8px;
   cursor: pointer;
-  overflow: hidden;
+  overflow: visible; /* to prevent clipping */
   transition: all 0.3s ease;
   font-weight: bold;
   justify-content: space-between;
@@ -232,7 +233,7 @@ align-items: center;
   }
 
   .b {
-    height: 350px;
+    min-height: 350px;
     width: 100%;
     font-size: 0.75rem;
   }
@@ -277,7 +278,7 @@ align-items: center;
   }
 
   .b {
-    height: 520px;
+     min-height: 490px;
   }
    .image {
     object-fit: fill;
@@ -291,7 +292,7 @@ align-items: center;
   }
 
   .b {
-    height: 400px;
+    min-height: 425px;
   }
    .image {
     object-fit: fill;
@@ -530,6 +531,7 @@ border-color: #6a5acd;
   margin-top:18px;
   border-top: 1px solid grey;
   width: 100%;
+  overflow-x: hidden; /* 👈 prevent horizontal scroll */
 }
 .input{
   color: white;
@@ -562,18 +564,27 @@ border-color: #6a5acd;
   margin-top: 6px;
   width: 100%;
 }
-.ba{
+.ba {
   display: flex;
-  align-items: start;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
-.name{
+.name {
   color: blue;
-  font-size: 400px;
+  font-size: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 45%; /* Adjusted so time has more space */
 }
-.time{
+.time {
   color: red;
-  margin-left: 250px;
-  font-size: 13px  !important;
+  font-size: 13px;
+  white-space: nowrap;
+  margin-left: auto;
+  text-align: right;
+  width: 60%; /* 👈 Add this line */
 }
 
 /* Login.js component ke liye css hai yha se */
